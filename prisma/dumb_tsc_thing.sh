@@ -1,0 +1,1 @@
+npx tsc script.ts && node script.js
