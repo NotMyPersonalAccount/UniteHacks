@@ -17,7 +17,7 @@ const Navbar = () => {
             </a>
           </div>
           <div className="hidden md:block">
-            <NavItem href="/">Workspaces</NavItem>
+            <NavItem href="/workspaces">Workspaces</NavItem>
             <NavItem href="/">Enterprise</NavItem>
             <NavItem href="/">Contact</NavItem>
           </div>
