@@ -8,7 +8,7 @@ export default function Navbar(): ReactElement {
   const [dropdown, setDropdown] = useState(false);
 
   return (
-    <>
+    <div className="border-b-2 border-gray-200">
       <nav className="px-10 sm:px-16 py-8 bg-gray-100 md:bg-inherit">
         <div className="flex justify-between">
           <div className="flex items-center justify-items-center">
@@ -27,6 +27,6 @@ export default function Navbar(): ReactElement {
           </div>
         </div>
       </nav>
-    </>
+    </div>
   );
 }

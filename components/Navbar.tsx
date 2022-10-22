@@ -19,7 +19,7 @@ export default function Navbar(): ReactElement {
             </a>
           </div>
           <div className="hidden md:block">
-            <NavItem href="/workspaces">Workspaces</NavItem>
+            <NavItem href="/cafes">Cafes</NavItem>
             <NavItem href="/enterprise">Enterprise</NavItem>
             <NavItem href="/contact">Contact</NavItem>
           </div>
@@ -48,7 +48,7 @@ export default function Navbar(): ReactElement {
         }
       >
         <ul>
-          <HamburgerItem href="/workspaces">Workspaces</HamburgerItem>
+          <HamburgerItem href="/cafes">Cafes</HamburgerItem>
           <HamburgerItem href="/enterprise">Enterprise</HamburgerItem>
           <HamburgerItem href="/contact">Contact</HamburgerItem>
         </ul>

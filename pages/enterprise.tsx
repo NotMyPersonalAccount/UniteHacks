@@ -6,7 +6,7 @@ const Enterprise: NextPage = () => {
   return (
     <div>
       <Navbar />
-      <p>Enterprise</p>
+      <p>Enterprises dont get coffee.</p>
     </div>
   );
 };
