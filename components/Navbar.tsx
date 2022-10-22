@@ -1,10 +1,12 @@
-import { ReactElement, useState } from "react";
+import { ReactElement, ReactNode, useState } from "react";
 import icon from "../public/images/icon.png";
 import hamburgerIcon from "../public/images/hamburger.svg";
 import Image from "next/image";
 import styles from "../styles/Navbar.module.scss";
+import { useSession, signIn, signOut } from "next-auth/react";
 
-const Navbar = () => {
+export default function Navbar(): ReactElement {
+  const { data: session } = useSession();
   const [hamburger, setHamburger] = useState(false);
   return (
     <>
@@ -18,19 +20,18 @@ const Navbar = () => {
           </div>
           <div className="hidden md:block">
             <NavItem href="/workspaces">Workspaces</NavItem>
-            <NavItem href="/">Enterprise</NavItem>
-            <NavItem href="/">Contact</NavItem>
+            <NavItem href="/enterprise">Enterprise</NavItem>
+            <NavItem href="/contact">Contact</NavItem>
           </div>
         </div>
         <div className="hidden md:block">
-          <a href="/signup">
-            <button
-              className="text-white font-bold px-8 lg:px-12 py-3 rounded-md"
-              style={{ backgroundColor: "#66A473" }}
-            >
-              Sign In
-            </button>
-          </a>
+          <button
+            className="text-white font-bold px-8 lg:px-12 py-3 rounded-md"
+            style={{ backgroundColor: "#66A473" }}
+            onClick={() => (session ? signOut() : signIn())}
+          >
+            {session ? "Sign Out" : "Sign In"}
+          </button>
         </div>
         <div
           className="flex items-center justify-items-center md:hidden"
@@ -47,38 +48,41 @@ const Navbar = () => {
         }
       >
         <ul>
-          <HamburgerItem href="/">Workspaces</HamburgerItem>
-          <HamburgerItem href="/">Enterprise</HamburgerItem>
-          <HamburgerItem href="/">Contact</HamburgerItem>
+          <HamburgerItem href="/workspaces">Workspaces</HamburgerItem>
+          <HamburgerItem href="/enterprise">Enterprise</HamburgerItem>
+          <HamburgerItem href="/contact">Contact</HamburgerItem>
         </ul>
         <a href="/signup">
           <button
             className="text-white font-bold px-8 lg:px-12 py-2 mt-4 mr-5 rounded-md"
             style={{ backgroundColor: "#66A473" }}
+            onClick={() => (session ? signOut() : signIn())}
           >
-            Sign In
+            {session ? "Sign Out" : "Sign In"}
           </button>
         </a>
       </div>
     </>
   );
-};
+}
 
-const NavItem: React.FC<{ href: string; children: ReactElement | string }> = ({
-  href,
-  children,
-}) => {
+type NavItemProps = {
+  href: string;
+  children: ReactNode;
+};
+function NavItem({ href, children }: NavItemProps): ReactElement {
   return (
     <a className={styles["nav-item"]} href={href}>
       {children}
     </a>
   );
-};
+}
 
-const HamburgerItem: React.FC<{
+type HamburgerItemProps = {
   href: string;
-  children: ReactElement | string;
-}> = ({ href, children }) => {
+  children: ReactNode;
+};
+function HamburgerItem({ href, children }: HamburgerItemProps): ReactElement {
   return (
     <li>
       <a className="text-xl mr-5" href={href}>
@@ -86,6 +90,4 @@ const HamburgerItem: React.FC<{
       </a>
     </li>
   );
-};
-
-export default Navbar;
+}

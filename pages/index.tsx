@@ -1,11 +1,12 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { ReactElement } from "react";
 import Navbar from "../components/Navbar";
 import home from "../public/images/home.png";
 import styles from "../styles/Home.module.scss";
 
-const Home: NextPage = () => {
+export default function Home(): ReactElement {
   return (
     <div id={styles.content}>
       <Head>
@@ -41,6 +42,4 @@ const Home: NextPage = () => {
       </div>
     </div>
   );
-};
-
-export default Home;
+}

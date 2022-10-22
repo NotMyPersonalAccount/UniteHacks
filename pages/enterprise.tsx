@@ -2,13 +2,13 @@ import type { NextPage } from "next";
 import Navbar from "../components/Navbar";
 import Head from "next/head";
 
-const Workspaces: NextPage = () => {
+const Enterprise: NextPage = () => {
   return (
     <div>
       <Navbar />
-      <p>Workspaces</p>
+      <p>Enterprise</p>
     </div>
   );
 };
 
-export default Workspaces;
+export default Enterprise;
