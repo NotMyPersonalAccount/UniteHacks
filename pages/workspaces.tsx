@@ -4,7 +4,7 @@ function Workspaces(props: { shops: CoffeeShop[] }) {
     console.log("d");
     let shops = props.shops;
 
-    let query = "quiet";
+    let query = "";
     let desired = {
         quiet: 3,
         wifi: 8,
