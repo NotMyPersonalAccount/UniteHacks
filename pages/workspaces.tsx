@@ -1,18 +1,32 @@
 import { CoffeeShop, PrismaClient } from "@prisma/client";
-import type { NextPage } from "next";
 
 function Workspaces(props: { shops: CoffeeShop[] }) {
     console.log("d");
     let shops = props.shops;
 
-    // someone make a  prerty component or something for this
+    let query = "quiet";
+    let desired = {
+        quiet: 3,
+        wifi: 8,
+        coffee: 3,
+        tea: 7,
+        outlets: 2,
+    };
+
     return (
         <div>
-            {shops.map((shop) => (
-                <div>
-                    name: {shop.name} addr: {shop.address} img: {shop.imgUrl}{" "}
-                </div>
-            ))}
+            {shops
+                .filter((s) => s.name.includes(query))
+                .filter((s) => s.quiet >= desired.quiet)
+                .filter((s) => s.quiet >= desired.wifi)
+                .filter((s) => s.quiet >= desired.coffee)
+                .filter((s) => s.quiet >= desired.outlets)
+                .map((shop) => (
+                    <div>
+                        name: {shop.name} addr: {shop.address} img:{" "}
+                        {shop.imgUrl}{" "}
+                    </div>
+                ))}
         </div>
     );
 }

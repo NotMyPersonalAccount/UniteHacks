@@ -5,9 +5,19 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 async function main() {
-	console.log("hello")
-	const shops = await prisma.coffeeShop.findMany()
-	console.log(shops)
+	console.log("makinh thing")
+	await prisma.coffeeShop.create({
+		data: {
+			name: "CRAAAAAAAAAAAAAZY SHOP",
+			address: "j street 3",
+			imgUrl: "pig",
+			quiet: 8,
+			wifi: 3,
+			outlets: 7,
+			coffee: 2,
+			tea: 2,
+		}
+	})
 }
 
 main()

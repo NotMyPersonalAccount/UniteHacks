@@ -41,15 +41,24 @@ var client_1 = require("@prisma/client");
 var prisma = new client_1.PrismaClient();
 function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var shops;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    console.log("hello");
-                    return [4 /*yield*/, prisma.coffeeShop.findMany()];
+                    console.log("makinh thing");
+                    return [4 /*yield*/, prisma.coffeeShop.create({
+                            data: {
+                                name: "CRAAAAAAAAAAAAAZY SHOP",
+                                address: "j street 3",
+                                imgUrl: "pig",
+                                quiet: 8,
+                                wifi: 3,
+                                outlets: 7,
+                                coffee: 2,
+                                tea: 2
+                            }
+                        })];
                 case 1:
-                    shops = _a.sent();
-                    console.log(shops);
+                    _a.sent();
                     return [2 /*return*/];
             }
         });
