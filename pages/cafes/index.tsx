@@ -15,6 +15,7 @@ export default function Cafes(props: { shops: CoffeeShop[] }): ReactElement {
   return (
     <>
       <Navbar />
+      <div style={{marginTop: "1rem"}}>
       <input
         style={{marginLeft: "4rem"}}
         className="border border-black px-2 py-2 rounded-md"
@@ -114,6 +115,7 @@ export default function Cafes(props: { shops: CoffeeShop[] }): ReactElement {
       <option>9</option>
       <option>10</option>
     </select>
+    </div>
 
       <div className="flex justify-center items-center mx-16">
         <div className="flex flex-wrap">
@@ -125,7 +127,7 @@ export default function Cafes(props: { shops: CoffeeShop[] }): ReactElement {
             .filter((s) => s.outlets >= outlets)
             .filter((s) => s.tea >= tea)
             .map((cafe) => (
-              <Cafe id={cafe.id} name={cafe.name} address={cafe.address} img={ cafe.imgUrl } />
+              <Cafe key={cafe.id} id={cafe.id} name={cafe.name} address={cafe.address} img={ cafe.imgUrl } />
             ))}
         </div>
       </div>

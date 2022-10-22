@@ -1,5 +1,4 @@
 import { CoffeeShop } from "@prisma/client";
-import { Head } from "next/document";
 import { ReactElement } from "react";
 import Navbar from "../../components/cafes/Navbar";
 import { prisma } from "../utils/prisma";
@@ -29,23 +28,18 @@ export default function CafePage({ cafe }: Props): ReactElement {
             <div className="mx-8">
               <div>
                 <span className="text-lg block">
-                  Oakland, CA <span>Get Directions</span>
+                    Location: { cafe.address }
                 </span>
-                <span className="text-lg block">
-                  4.9 <span>Get Directions</span>
-                </span>
-              </div>
-              <div className="my-4">
-                <p className="text-lg">Website: </p>
               </div>
               <div className="my-8">
-                <p className="text-xl font-bold">Factors</p>
+                <p className="text-xl font-bold">funky stats</p>
                 <ul>
-                  <li>Fast Wifi</li>
-                  <li>Serves Tea</li>
-                  <li>Serves Coffee</li>
+                    {cafe.coffee}
+                    {cafe.tea}
+                    {cafe.outlets}
+                    {cafe.wifi}
+                    {cafe.quiet}
                 </ul>
-                <a className="underline">View More</a>
               </div>
               <p>Open</p>
               <p>Website</p>

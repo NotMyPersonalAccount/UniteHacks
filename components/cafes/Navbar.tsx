@@ -1,5 +1,6 @@
 import { useSession } from "next-auth/react";
 import Image from "next/image";
+import Link from "next/link";
 import { ReactElement, useState } from "react";
 import icon from "../../public/images/icon.png";
 
@@ -14,17 +15,19 @@ export default function Navbar(): ReactElement {
           <div className="flex items-center justify-items-center">
             <div className="flex items-center justify-items-center mr-4 lg:mr-10">
               <Image src={icon} width="56em" height="45em" />
-              <a className="font-bold text-2xl" href="/">
+              <Link className="font-bold text-2xl" href="/">
                 Remotely
-              </a>
+              </Link>
             </div>
           </div>
-          <div
-            className="bg-gray-200 rounded-md flex items-center justify-items-center px-2 text-xl"
-            onClick={() => setDropdown(!dropdown)}
-          >
-            {session?.user?.name}
-          </div>
+          {session?.user?.name && (
+            <div
+              className="bg-gray-200 rounded-md flex items-center justify-items-center px-2 text-xl"
+              onClick={() => setDropdown(!dropdown)}
+            >
+              {session.user.name}
+            </div>
+          )}
         </div>
       </nav>
     </div>

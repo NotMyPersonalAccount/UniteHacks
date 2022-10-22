@@ -4,6 +4,7 @@ import hamburgerIcon from "../public/images/hamburger.svg";
 import Image from "next/image";
 import styles from "../styles/Navbar.module.scss";
 import { useSession, signIn, signOut } from "next-auth/react";
+import Link from "next/link";
 
 export default function Navbar(): ReactElement {
   const { data: session } = useSession();
@@ -14,9 +15,9 @@ export default function Navbar(): ReactElement {
         <div className="flex items-center justify-items-center">
           <div className="flex items-center justify-items-center mr-4 lg:mr-10">
             <Image src={icon} width="56em" height="45em" />
-            <a className="font-bold text-2xl" href="/">
+            <Link className="font-bold text-2xl" href="/">
               Remotely
-            </a>
+            </Link>
           </div>
           <div className="hidden md:block">
             <NavItem href="/cafes">Cafes</NavItem>
