@@ -1,0 +1,12 @@
+#content {
+  height: 100%;
+}
+
+@screen xl {
+  #content {
+    background-image: url("../public/images/home.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+  }
+}

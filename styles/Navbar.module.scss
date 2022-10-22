@@ -1,0 +1,15 @@
+.hamburger {
+  height: 0;
+}
+
+.hamburger-active {
+  height: 100%;
+}
+
+.nav-item {
+  @apply font-medium text-lg mr-4;
+
+  @screen lg {
+    @apply mr-10;
+  }
+}
