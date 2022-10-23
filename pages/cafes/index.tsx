@@ -1,4 +1,4 @@
-import { prisma } from "../utils/prisma";
+import { prisma } from "../../utils/prisma";
 import { ReactElement, useState } from "react";
 import Cafe from "../../components/cafes/Cafe";
 import Navbar from "../../components/cafes/Navbar";
