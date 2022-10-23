@@ -6,11 +6,11 @@ import { CoffeeShop } from "@prisma/client";
 
 export default function Cafes(props: { shops: CoffeeShop[] }): ReactElement {
   const [search, setSearch] = useState("");
-  const [quiet, setQuiet] = useState("");
-  const [wifi, setWifi] = useState("");
-  const [coffee, setCoffee] = useState("");
-  const [tea, setTea] = useState("");
-  const [outlets, setOutlets] = useState("");
+  const [quiet, setQuiet] = useState(0);
+  const [wifi, setWifi] = useState(0);
+  const [coffee, setCoffee] = useState(0);
+  const [tea, setTea] = useState(0);
+  const [outlets, setOutlets] = useState(0);
 
   
   return (
@@ -29,7 +29,7 @@ export default function Cafes(props: { shops: CoffeeShop[] }): ReactElement {
       <select  id="quietselect"
       className="border border-black px-2 py-2 rounded-md"
       placeholder="Filter Quiet"
-      onChange={(e) => setQuiet(e.target.value)}>
+      onChange={(e) => setQuiet(parseInt(e.target.value))}>
             <option>0</option>
             <option>1</option>
             <option>2</option>
@@ -48,7 +48,7 @@ export default function Cafes(props: { shops: CoffeeShop[] }): ReactElement {
         id = "outletselect"
         className="border border-black px-2 py-2 rounded-md"
         placeholder="Filter Wifi"
-        onChange={(e) => setOutlets(e.target.value)}>
+        onChange={(e) => setOutlets(parseInt(e.target.value))}>
             <option>0</option>
             <option>1</option>
             <option>2</option>
@@ -66,7 +66,7 @@ export default function Cafes(props: { shops: CoffeeShop[] }): ReactElement {
       <select
         className="border border-black px-2 py-2 rounded-md"
         placeholder="Filter Wifi"
-        onChange={(e) => setWifi(e.target.value)}>
+        onChange={(e) => setWifi(parseInt(e.target.value))}>
             <option>0</option>
             <option>1</option>
             <option>2</option>
@@ -84,7 +84,7 @@ export default function Cafes(props: { shops: CoffeeShop[] }): ReactElement {
       <select
         className="border border-black px-2 py-2 rounded-md"
         placeholder="Filter Coffee"
-        onChange={(e) => setCoffee(e.target.value)}>
+        onChange={(e) => setCoffee(parseInt(e.target.value))}>
             <option>0</option>
             <option>1</option>
             <option>2</option>
@@ -102,7 +102,7 @@ export default function Cafes(props: { shops: CoffeeShop[] }): ReactElement {
       <select
         className="border border-black px-2 py-2 rounded-md"
         placeholder="Filter Tea"
-        onChange={(e) => setTea(e.target.value)}
+        onChange={(e) => setTea(parseInt(e.target.value))}
       >
       <option>0</option>
       <option>1</option>
