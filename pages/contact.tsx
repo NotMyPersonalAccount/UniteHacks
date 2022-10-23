@@ -9,7 +9,7 @@ const Contact: NextPage = () => {
       <div className="text-center">
         <p className="text-contact0">Love to hear from you</p>
         <p className="text-contact0">Get in touch 👋</p>
-        <form action="/send-data-here" method="post">
+        <form method="post">
           <p>
             <input
               className="text-contact1a"
@@ -43,6 +43,7 @@ const Contact: NextPage = () => {
             className="text-white font-bold px-8 lg:px-12 py-3 rounded-md"
             style={{ backgroundColor: "#66A473", marginTop: "1rem" }}
             type="submit"
+            onClick={() => alert("The Form has been Submitted.")}
           >
             Submit
           </button>

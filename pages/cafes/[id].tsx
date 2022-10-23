@@ -34,16 +34,18 @@ export default function CafePage({ cafe }: Props): ReactElement {
               <div className="my-8">
                 <p className="text-xl font-bold">funky stats</p>
                 <ul>
-                    {cafe.coffee}
-                    {cafe.tea}
-                    {cafe.outlets}
-                    {cafe.wifi}
-                    {cafe.quiet}
+                    coffee score: {cafe.coffee}
+                    <br />
+                    tea score: {cafe.tea}
+                    <br />
+                    outlet score: {cafe.outlets}
+                    <br />
+                    wifi score: {cafe.wifi}
+                    <br />
+                    quiet score (higher is quieter): {cafe.quiet}
+                    <br />
                 </ul>
               </div>
-              <p>Open</p>
-              <p>Website</p>
-              <p>Factors</p>
             </div>
           </div>
         </div>

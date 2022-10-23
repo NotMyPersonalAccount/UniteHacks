@@ -15,9 +15,10 @@ export default function Navbar(): ReactElement {
         <div className="flex items-center justify-items-center">
           <div className="flex items-center justify-items-center mr-4 lg:mr-10">
             <Image src={icon} width="56em" height="45em" />
-            <Link className="font-bold text-2xl" href="/">
+            <strong><Link className="font-bold text-2xl" href="/">
               Remotely
-            </Link>
+
+            </Link></strong>
           </div>
           <div className="hidden md:block">
             <NavItem href="/cafes">Cafes</NavItem>
