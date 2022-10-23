@@ -1,7 +1,8 @@
 import { CoffeeShop } from "@prisma/client";
 import { ReactElement } from "react";
 import Navbar from "../../components/cafes/Navbar";
-import { prisma } from "../../utils/prisma";
+import { fakeShitJob } from "../../utils/prisma";
+// import { prisma } from "../utils/prisma";
 
 type Props = {
   cafe: CoffeeShop;
@@ -59,16 +60,15 @@ type Context = {
 };
 
 export async function getServerSideProps(context: Context) {
-  const cafe = await prisma.coffeeShop.findUnique({
-    where: {
-      // @ts-ignore
-      id: parseInt(context.params.id),
-    },
-  });
-  console.log(context);
+  //   const cafe = await prisma.coffeeShop.findUnique({
+  //     where: {
+  //       // @ts-ignore
+  //       id: parseInt(context.params.id),
+  //     },
+  //   });
   return {
     props: {
-      cafe,
+      cafe: fakeShitJob.find((s) => s.id === context.params.id),
     },
   };
 }
