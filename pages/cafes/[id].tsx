@@ -1,7 +1,7 @@
 import { CoffeeShop } from "@prisma/client";
 import { ReactElement } from "react";
 import Navbar from "../../components/cafes/Navbar";
-import { prisma } from "../utils/prisma";
+import { prisma } from "../../utils/prisma";
 
 type Props = {
   cafe: CoffeeShop;
