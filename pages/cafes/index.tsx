@@ -2,6 +2,7 @@ import { prisma } from "../utils/prisma";
 import { ReactElement, useState } from "react";
 import Cafe from "../../components/cafes/Cafe";
 import Navbar from "../../components/cafes/Navbar";
+import { CoffeeShop } from "@prisma/client";
 
 export default function Cafes(props: { shops: CoffeeShop[] }): ReactElement {
   const [search, setSearch] = useState("");
