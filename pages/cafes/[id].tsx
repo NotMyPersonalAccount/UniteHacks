@@ -68,7 +68,8 @@ export async function getServerSideProps(context: Context) {
   //   });
   return {
     props: {
-      cafe: fakeShitJob.find((s) => s.id === context.params.id),
+        // @ts-ignore
+      cafe: fakeShitJob.find((s) => s.id === parseInt(context.params.id)),
     },
   };
 }
