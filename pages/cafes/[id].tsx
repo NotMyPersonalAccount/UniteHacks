@@ -22,28 +22,26 @@ export default function CafePage({ cafe }: Props): ReactElement {
           </div>
           <div className="flex flex-wrap justify-center mt-16">
             <img
-                          className="rounded-md w-8/12 mb-8 border border-black"
-                          src={"../images/" + cafe.imgUrl}
+              className="rounded-md w-8/12 mb-8 border border-black"
+              src={"../images/" + cafe.imgUrl}
             />
             <div className="mx-8">
               <div>
-                <span className="text-lg block">
-                    Location: { cafe.address }
-                </span>
+                <span className="text-lg block">Location: {cafe.address}</span>
               </div>
               <div className="my-8">
                 <p className="text-xl font-bold">funky stats</p>
                 <ul>
-                    coffee score: {cafe.coffee}
-                    <br />
-                    tea score: {cafe.tea}
-                    <br />
-                    outlet score: {cafe.outlets}
-                    <br />
-                    wifi score: {cafe.wifi}
-                    <br />
-                    quiet score (higher is quieter): {cafe.quiet}
-                    <br />
+                  coffee score: {cafe.coffee}
+                  <br />
+                  tea score: {cafe.tea}
+                  <br />
+                  outlet score: {cafe.outlets}
+                  <br />
+                  wifi score: {cafe.wifi}
+                  <br />
+                  quiet score (higher is quieter): {cafe.quiet}
+                  <br />
                 </ul>
               </div>
             </div>
@@ -63,6 +61,7 @@ type Context = {
 export async function getServerSideProps(context: Context) {
   const cafe = await prisma.coffeeShop.findUnique({
     where: {
+      // @ts-ignore
       id: parseInt(context.params.id),
     },
   });
