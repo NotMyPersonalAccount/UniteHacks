@@ -26,13 +26,14 @@ export default function Home(): ReactElement {
         </header>
         <div className="pt-6 max-w-lg lg:max-w-xl">
           <p className="text-2xl">
-          Whether you’re a team of one, a growing startup, or a Fortune 500 company—we have solutions for all the ways you work.
+            Whether you’re a team of one, a growing startup, or a Fortune 500
+            company—we have solutions for all the ways you work.
           </p>
         </div>
         <div className="pt-6">
           <p className="text-xl">Find Workspace In</p>
           <select className="text-xl px-2 py-2 border border-black rounded-md">
-            <option >SF Bay Area</option>
+            <option>SF Bay Area</option>
           </select>
         </div>
       </div>
