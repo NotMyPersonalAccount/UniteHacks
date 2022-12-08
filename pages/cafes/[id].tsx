@@ -31,7 +31,7 @@ export default function CafePage({ cafe }: Props): ReactElement {
                 <span className="text-lg block">Location: {cafe.address}</span>
               </div>
               <div className="my-8">
-                <p className="text-xl font-bold">funky stats</p>
+                <p className="text-xl font-bold">Funky Stats</p>
                 <ul>
                   coffee score: {cafe.coffee}
                   <br />
