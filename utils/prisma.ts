@@ -123,7 +123,7 @@ export const fakeShitJob = [
     description:
       "Neighborhood coworking space offering flexible workspace solutions. Feauring multiple skylights, exposed brick and timber, and a 25′ high atrium.",
     imgUrl:
-      "https://images.meetingsbooker.com/images/venues/temescalworks-6.jpgs",
+      "https://images.meetingsbooker.com/images/venues/temescalworks-6.jpg",
     quiet: 5,
     wifi: 8,
     outlets: 3,
