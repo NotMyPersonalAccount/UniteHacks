@@ -24,7 +24,7 @@ export default function CafePage({ cafe }: Props): ReactElement {
           <div className="flex flex-wrap justify-center mt-16">
             <img
               className="rounded-md w-8/12 mb-8 border border-black"
-              src={"../images/" + cafe.imgUrl}
+              src={cafe.imgUrl}
             />
             <div className="mx-8">
               <div>
