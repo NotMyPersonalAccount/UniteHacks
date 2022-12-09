@@ -59,7 +59,7 @@ export default function Navbar(): ReactElement {
           <button
             className="text-white font-bold px-8 lg:px-12 py-2 mt-4 mr-5 rounded-md"
             style={{ backgroundColor: "#66A473" }}
-            onClick={() => (session ? signOut() : signIn())}
+            onClick={() => (session ? signOut() : signIn("google"))}
           >
             {session ? "Sign Out" : "Sign In"}
           </button>
