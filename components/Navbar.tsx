@@ -55,15 +55,13 @@ export default function Navbar(): ReactElement {
           <HamburgerItem href="/enterprise">Enterprise</HamburgerItem>
           <HamburgerItem href="/contact">Contact</HamburgerItem>
         </ul>
-        <a href="/signup">
-          <button
-            className="text-white font-bold px-8 lg:px-12 py-2 mt-4 mr-5 rounded-md"
-            style={{ backgroundColor: "#66A473" }}
-            onClick={() => (session ? signOut() : signIn("google"))}
-          >
-            {session ? "Sign Out" : "Sign In"}
-          </button>
-        </a>
+        <button
+          className="text-white font-bold px-8 lg:px-12 py-2 mt-4 mr-5 rounded-md"
+          style={{ backgroundColor: "#66A473" }}
+          onClick={() => (session ? signOut() : signIn("google"))}
+        >
+          {session ? "Sign Out" : "Sign In"}
+        </button>
       </div>
     </>
   );
